@@ -1,5 +1,6 @@
 package com.siafarm.mainactivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -17,6 +18,7 @@ import com.siafarm.mainactivity.model.Snap;
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressLint("Registered")
 public class MainActivity extends AppCompatActivity  {
 
     public static final String ORIENTATION = "orientation";
@@ -29,16 +31,12 @@ public class MainActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_home);
 
-        mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        mRecyclerView = findViewById(R.id.recyclerView);
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setHasFixedSize(true);
 
-        if (savedInstanceState == null) {
-            mHorizontal = true;
-        } else {
-            mHorizontal = savedInstanceState.getBoolean(ORIENTATION);
-        }
+        mHorizontal = savedInstanceState == null || savedInstanceState.getBoolean(ORIENTATION);
 
         setupAdapter();
     }

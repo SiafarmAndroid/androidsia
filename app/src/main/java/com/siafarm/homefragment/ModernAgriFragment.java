@@ -16,13 +16,8 @@ import com.siafarm.homefragment.model.modern_agri_data;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by dhivya_v on 12/1/2017.
- */
-
 public class ModernAgriFragment extends Fragment {
 
-    private RecyclerView mRecyclerView;
     Modern_agri_adapter adapter;
 
     public ModernAgriFragment() {
@@ -38,7 +33,7 @@ public class ModernAgriFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.modern_agri_layout, container, false);
-        mRecyclerView = view. findViewById(R.id.recyclerView);
+        RecyclerView mRecyclerView = view.findViewById(R.id.recyclerView);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         mRecyclerView.setHasFixedSize(true);
 

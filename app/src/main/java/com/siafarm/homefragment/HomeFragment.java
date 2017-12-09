@@ -29,7 +29,7 @@ public class HomeFragment extends Fragment {
 
     public static final String ORIENTATION = "orientation";
     private AutoScrollViewPager viewPager;
-    private int layoutsCount = 4;
+    private int layoutsCount = 5;
     private RecyclerView mRecyclerView;
     private boolean mHorizontal;
 
@@ -50,13 +50,7 @@ public class HomeFragment extends Fragment {
 
         initViews(view);
         setViewPagerAdapter();
-
-
-        if (savedInstanceState == null) {
-            mHorizontal = true;
-        } else {
-            mHorizontal = savedInstanceState.getBoolean(ORIENTATION);
-        }
+        mHorizontal = savedInstanceState == null || savedInstanceState.getBoolean(ORIENTATION);
         setupAdapter();
         return view;
     }
@@ -129,15 +123,14 @@ public class HomeFragment extends Fragment {
             if (position < layoutsCount) {
                 viewPager.setCurrentItem(position, true);
                 handler.postDelayed(runnable, 20000);
-            } else {
             }
         }
     };
 
 
-    private int getItem(int i) {
+  /*  private int getItem(int i) {
         return viewPager.getCurrentItem() + i;
-    }
+    }*/
 
     ViewPager.OnPageChangeListener viewPagerPageChangeListener = new ViewPager.OnPageChangeListener() {
 
@@ -167,26 +160,31 @@ public class HomeFragment extends Fragment {
     public class MyViewPagerAdapter extends PagerAdapter {
         private LayoutInflater layoutInflater;
 
-        public MyViewPagerAdapter() {
+        MyViewPagerAdapter() {
         }
 
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
             layoutInflater = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-            View view = layoutInflater.inflate(R.layout.help_guide_slides_container, container, false);
+            View view = null;
+            if (layoutInflater != null)
+                view = layoutInflater.inflate(R.layout.help_guide_slides_container, container, false);
             switch (position) {
                 case 0:
-                    view.setBackgroundResource(R.drawable.baimg);
+                    if (view != null) view.setBackgroundResource(R.drawable.fg);
                     break;
                 case 1:
-                    view.setBackgroundResource(R.drawable.bgimg);
+                    if (view != null) view.setBackgroundResource(R.drawable.bgimg);
                     break;
                 case 2:
-                    view.setBackgroundResource(R.drawable.bgimggg);
+                    if (view != null) view.setBackgroundResource(R.drawable.bgimggg);
                     break;
                 case 3:
-                    view.setBackgroundResource(R.drawable.brimgg);
+                    if (view != null) view.setBackgroundResource(R.drawable.brimgg);
+                    break;
+                case 4:
+                    if (view != null) view.setBackgroundResource(R.drawable.baimg);
                     break;
 
             }

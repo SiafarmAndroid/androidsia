@@ -23,7 +23,6 @@ public class HomeActivity extends AppCompatActivity {
 
     private NavigationView navigationView;
     private DrawerLayout drawer;
-    private View navHeader;
     private Toolbar toolbar;
 
     // index to identify current nav menu item
@@ -42,7 +41,6 @@ public class HomeActivity extends AppCompatActivity {
 
     private String[] activityTitles;
 
-    private boolean shouldLoadHomeFragOnBackPress = true;
     private Handler mHandler;
 
 
@@ -57,8 +55,6 @@ public class HomeActivity extends AppCompatActivity {
 
         drawer =  findViewById(R.id.drawer_layout);
         navigationView =  findViewById(R.id.nav_view);
-
-        navHeader = navigationView.getHeaderView(0);
         activityTitles = getResources().getStringArray(R.array.nav_item_activity_titles);
 
         setUpNavigationView();
@@ -94,9 +90,7 @@ public class HomeActivity extends AppCompatActivity {
         };
 
         // If mPendingRunnable is not null, then add to the message queue
-        if (mPendingRunnable != null) {
-            mHandler.post(mPendingRunnable);
-        }
+        if (mPendingRunnable != null) mHandler.post(mPendingRunnable);
 
 
         drawer.closeDrawers();
@@ -108,16 +102,13 @@ public class HomeActivity extends AppCompatActivity {
         switch (navItemIndex) {
             case 0:
                 // home
-                HomeFragment homeFragment = new HomeFragment();
-                return homeFragment;
+                return new HomeFragment();
             case 1:
                 // newsFragment
-                NewsFragment newsFragment = new NewsFragment();
-                return newsFragment;
+                return new NewsFragment();
             case 2:
                 // Modern Agri
-                ModernAgriFragment modernAgriFragment = new ModernAgriFragment();
-                return modernAgriFragment;
+                return new ModernAgriFragment();
             default:
                 return new HomeFragment();
         }
@@ -193,6 +184,7 @@ public class HomeActivity extends AppCompatActivity {
             return;
         }
 
+        boolean shouldLoadHomeFragOnBackPress = true;
         if (shouldLoadHomeFragOnBackPress) {
 
             if (navItemIndex != 0) {

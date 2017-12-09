@@ -32,9 +32,9 @@ public class GravitySnapHelper extends LinearSnapHelper {
         this(gravity, false, null);
     }
 
-    public GravitySnapHelper(int gravity, boolean enableSnapLastItem) {
+   /* public GravitySnapHelper(int gravity, boolean enableSnapLastItem) {
         this(gravity, enableSnapLastItem, null);
-    }
+    }*/
 
     public GravitySnapHelper(int gravity, boolean enableSnapLastItem, SnapListener snapListener) {
         delegate = new GravityDelegate(gravity, enableSnapLastItem, snapListener);

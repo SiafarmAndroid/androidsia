@@ -37,16 +37,16 @@ class GravityDelegate {
         }
     };
 
-    public GravityDelegate(int gravity) {
+   /* public GravityDelegate(int gravity) {
         this(gravity, false, null);
     }
 
     public GravityDelegate(int gravity, GravitySnapHelper.SnapListener listener) {
         this(gravity, false, listener);
     }
-
-    public GravityDelegate(int gravity, boolean enableSnapLast,
-                           GravitySnapHelper.SnapListener listener) {
+*/
+   GravityDelegate(int gravity, boolean enableSnapLast,
+                   GravitySnapHelper.SnapListener listener) {
         if (gravity != Gravity.START && gravity != Gravity.END
                 && gravity != Gravity.BOTTOM && gravity != Gravity.TOP) {
             throw new IllegalArgumentException("Invalid gravity value. Use START " +
@@ -57,7 +57,7 @@ class GravityDelegate {
         this.listener = listener;
     }
 
-    public void attachToRecyclerView(@Nullable RecyclerView recyclerView) {
+    void attachToRecyclerView(@Nullable RecyclerView recyclerView) {
         if (recyclerView != null) {
             recyclerView.setOnFlingListener(null);
             if ((gravity == Gravity.START || gravity == Gravity.END)
@@ -72,8 +72,8 @@ class GravityDelegate {
         }
     }
 
-    public int[] calculateDistanceToFinalSnap(@NonNull RecyclerView.LayoutManager layoutManager,
-                                              @NonNull View targetView) {
+    int[] calculateDistanceToFinalSnap(@NonNull RecyclerView.LayoutManager layoutManager,
+                                       @NonNull View targetView) {
         int[] out = new int[2];
 
         if (layoutManager.canScrollHorizontally()) {
@@ -99,7 +99,7 @@ class GravityDelegate {
         return out;
     }
 
-    public View findSnapView(RecyclerView.LayoutManager layoutManager) {
+    View findSnapView(RecyclerView.LayoutManager layoutManager) {
         View snapView = null;
         if (layoutManager instanceof LinearLayoutManager) {
             switch (gravity) {
@@ -121,7 +121,7 @@ class GravityDelegate {
         return snapView;
     }
 
-    public void enableLastItemSnap(boolean snap) {
+    void enableLastItemSnap(boolean snap) {
         snapLastItem = snap;
     }
 
@@ -246,7 +246,7 @@ class GravityDelegate {
         return null;
     }
 
-    int getSnappedPosition(RecyclerView recyclerView) {
+    private int getSnappedPosition(RecyclerView recyclerView) {
         RecyclerView.LayoutManager layoutManager = recyclerView.getLayoutManager();
 
         if (layoutManager instanceof LinearLayoutManager) {

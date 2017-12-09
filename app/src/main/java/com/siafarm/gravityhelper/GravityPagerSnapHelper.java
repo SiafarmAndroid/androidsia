@@ -17,9 +17,9 @@ public class GravityPagerSnapHelper extends PagerSnapHelper {
         this(gravity, false, null);
     }
 
-    public GravityPagerSnapHelper(int gravity, boolean enableSnapLastItem) {
+ /*   public GravityPagerSnapHelper(int gravity, boolean enableSnapLastItem) {
         this(gravity, enableSnapLastItem, null);
-    }
+    }*/
 
     public GravityPagerSnapHelper(int gravity, boolean enableSnapLastItem,
                                   GravitySnapHelper.SnapListener snapListener) {
