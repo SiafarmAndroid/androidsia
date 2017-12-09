@@ -16,11 +16,11 @@ import android.view.ViewGroup;
 
 import com.siafarm.R;
 import com.siafarm.gravityhelper.GravitySnapHelper;
+import com.siafarm.homefragment.adapter.Adapter;
+import com.siafarm.homefragment.adapter.SnapAdapter;
+import com.siafarm.homefragment.model.App;
+import com.siafarm.homefragment.model.Snap;
 import com.siafarm.homefragment.utils.AutoScrollViewPager;
-import com.siafarm.mainactivity.adapter.Adapter;
-import com.siafarm.mainactivity.adapter.SnapAdapter;
-import com.siafarm.mainactivity.model.App;
-import com.siafarm.mainactivity.model.Snap;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +29,7 @@ public class HomeFragment extends Fragment {
 
     public static final String ORIENTATION = "orientation";
     private AutoScrollViewPager viewPager;
-    private int layoutsCount = 5;
+    private int layoutsCount = 3;
     private RecyclerView mRecyclerView;
     private boolean mHorizontal;
 
@@ -79,15 +79,15 @@ public class HomeFragment extends Fragment {
 
     private void setupAdapter() {
         List<App> apps = getApps();
-
+        List<App> modernapps = getModernApps();
         SnapAdapter snapAdapter = new SnapAdapter(getActivity());
         if (mHorizontal) {
             snapAdapter.addSnap(new Snap(Gravity.CENTER, getResources().getString(R.string.news_updated), apps));
-            snapAdapter.addSnap(new Snap(Gravity.START, getResources().getString(R.string.modern_agri), apps));
-            snapAdapter.addSnap(new Snap(Gravity.START, getResources().getString(R.string.vegetable_farming), apps));
-            snapAdapter.addSnap(new Snap(Gravity.START, getResources().getString(R.string.products), apps));
-            snapAdapter.addSnap(new Snap(Gravity.START, getResources().getString(R.string.services), apps));
-            snapAdapter.addSnap(new Snap(Gravity.START, getResources().getString(R.string.gallery), apps));
+            snapAdapter.addSnap(new Snap(Gravity.START, getResources().getString(R.string.modern_agri), modernapps));
+            snapAdapter.addSnap(new Snap(Gravity.START, getResources().getString(R.string.vegetable_farming), modernapps));
+            snapAdapter.addSnap(new Snap(Gravity.START, getResources().getString(R.string.products), modernapps));
+            snapAdapter.addSnap(new Snap(Gravity.START, getResources().getString(R.string.services), modernapps));
+            snapAdapter.addSnap(new Snap(Gravity.START, getResources().getString(R.string.gallery), modernapps));
             mRecyclerView.setAdapter(snapAdapter);
         } else {
             Adapter adapter = new Adapter(false, false, apps);
@@ -103,11 +103,23 @@ public class HomeFragment extends Fragment {
 
     private List<App> getApps() {
         List<App> apps = new ArrayList<>();
-        apps.add(new App("Agri", R.drawable.baimg, 4.6f));
-        apps.add(new App("Siafarm", R.drawable.bgimg, 4.8f));
-        apps.add(new App("Agri", R.drawable.bgimggg, 4.5f));
-        apps.add(new App("Siafarm", R.drawable.brimgg, 4.2f));
-        apps.add(new App("Agri", R.drawable.baimg, 4.6f));
+        apps.add(new App( R.drawable.news1));
+        apps.add(new App( R.drawable.news2));
+        apps.add(new App( R.drawable.news3));
+        return apps;
+    }
+    private List<App> getModernApps() {
+        List<App> apps = new ArrayList<>();
+        apps.add(new App( R.drawable.vegsia1));
+        apps.add(new App( R.drawable.vegsia3 ));
+        apps.add(new App( R.drawable.vegsia3 ));
+        apps.add(new App( R.drawable.vegsia4 ));
+        apps.add(new App( R.drawable.vegsia5 ));
+        apps.add(new App( R.drawable.vegsia6 ));
+        apps.add(new App( R.drawable.vegsia7 ));
+        apps.add(new App( R.drawable.vegsia8 ));
+        apps.add(new App( R.drawable.vegsia9 ));
+        apps.add(new App( R.drawable.vegsia10 ));
         return apps;
     }
 
@@ -172,20 +184,15 @@ public class HomeFragment extends Fragment {
                 view = layoutInflater.inflate(R.layout.help_guide_slides_container, container, false);
             switch (position) {
                 case 0:
-                    if (view != null) view.setBackgroundResource(R.drawable.fg);
+                    if (view != null) view.setBackgroundResource(R.drawable.banner_new1);
                     break;
                 case 1:
-                    if (view != null) view.setBackgroundResource(R.drawable.bgimg);
+                    if (view != null) view.setBackgroundResource(R.drawable.banner_new2);
                     break;
                 case 2:
-                    if (view != null) view.setBackgroundResource(R.drawable.bgimggg);
+                    if (view != null) view.setBackgroundResource(R.drawable.banner_new3);
                     break;
-                case 3:
-                    if (view != null) view.setBackgroundResource(R.drawable.brimgg);
-                    break;
-                case 4:
-                    if (view != null) view.setBackgroundResource(R.drawable.baimg);
-                    break;
+
 
             }
             container.addView(view);

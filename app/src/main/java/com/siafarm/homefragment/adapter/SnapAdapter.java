@@ -1,4 +1,4 @@
-package com.siafarm.mainactivity.adapter;
+package com.siafarm.homefragment.adapter;
 
 import android.content.Context;
 import android.graphics.Typeface;
@@ -16,7 +16,7 @@ import android.widget.TextView;
 import com.siafarm.R;
 import com.siafarm.gravityhelper.GravityPagerSnapHelper;
 import com.siafarm.gravityhelper.GravitySnapHelper;
-import com.siafarm.mainactivity.model.Snap;
+import com.siafarm.homefragment.model.Snap;
 
 import java.util.ArrayList;
 

@@ -1,7 +1,6 @@
-package com.siafarm.mainactivity.adapter;
+package com.siafarm.homefragment.adapter;
 
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,7 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.siafarm.R;
-import com.siafarm.mainactivity.model.App;
+import com.siafarm.homefragment.model.App;
 
 import java.util.List;
 
@@ -42,7 +41,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     public void onBindViewHolder(ViewHolder holder, int position) {
         App app = mApps.get(position);
         holder.imageView.setImageResource(app.getDrawable());
-        holder.nameTextView.setText(app.getName());
 
     }
 
@@ -72,7 +70,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
         @Override
         public void onClick(View v) {
-            Log.d("App", mApps.get(getAdapterPosition()).getName());
+//            Log.d("App", mApps.get(getAdapterPosition()).getName());
         }
     }
 

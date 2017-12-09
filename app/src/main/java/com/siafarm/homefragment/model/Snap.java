@@ -1,4 +1,4 @@
-package com.siafarm.mainactivity.model;
+package com.siafarm.homefragment.model;
 
 
 import java.util.List;
@@ -8,6 +8,10 @@ public class Snap {
     private int mGravity;
     private String mText;
     private List<App> mApps;
+    public Snap()
+    {
+
+    }
 
     public Snap(int gravity, String text, List<App> apps) {
         mGravity = gravity;

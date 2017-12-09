@@ -17,8 +17,6 @@
             </intent-filter>
         </activity>
 <activity android:name=".homeactivity.HomeActivity"></activity>
-        <activity android:name=".mainactivity.GridActivity" />
-        <activity android:name=".mainactivity.MainActivity" />
     </application>
 
 </manifest>

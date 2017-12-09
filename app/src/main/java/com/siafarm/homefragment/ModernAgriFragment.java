@@ -38,11 +38,16 @@ public class ModernAgriFragment extends Fragment {
         mRecyclerView.setHasFixedSize(true);
 
         List<modern_agri_data> apps = new ArrayList<>();
-        apps.add(new modern_agri_data("Agri", R.drawable.baimg, 4.6f));
-        apps.add(new modern_agri_data("Siafarm", R.drawable.bgimg, 4.8f));
-        apps.add(new modern_agri_data("Agri", R.drawable.bgimggg, 4.5f));
-        apps.add(new modern_agri_data("Siafarm", R.drawable.brimgg, 4.2f));
-        apps.add(new modern_agri_data("Agri", R.drawable.baimg, 4.6f));
+        apps.add(new modern_agri_data( R.drawable.vegsia1));
+        apps.add(new modern_agri_data( R.drawable.vegsia2));
+        apps.add(new modern_agri_data( R.drawable.vegsia3));
+        apps.add(new modern_agri_data( R.drawable.vegsia4));
+        apps.add(new modern_agri_data( R.drawable.vegsia5));
+        apps.add(new modern_agri_data( R.drawable.vegsia6));
+        apps.add(new modern_agri_data( R.drawable.vegsia7));
+        apps.add(new modern_agri_data( R.drawable.vegsia8));
+        apps.add(new modern_agri_data( R.drawable.vegsia9));
+        apps.add(new modern_agri_data( R.drawable.vegsia10));
         adapter = new Modern_agri_adapter(apps,getContext());
         mRecyclerView.setAdapter(adapter);
 

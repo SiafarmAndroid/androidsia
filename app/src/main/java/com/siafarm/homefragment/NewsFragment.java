@@ -40,11 +40,9 @@ public class NewsFragment extends Fragment {
         mRecyclerView.setHasFixedSize(true);
 
         List<modern_agri_data> apps = new ArrayList<>();
-        apps.add(new modern_agri_data("Agri", R.drawable.baimg, 4.6f));
-        apps.add(new modern_agri_data("Siafarm", R.drawable.bgimg, 4.8f));
-        apps.add(new modern_agri_data("Agri", R.drawable.bgimggg, 4.5f));
-        apps.add(new modern_agri_data("Siafarm", R.drawable.brimgg, 4.2f));
-        apps.add(new modern_agri_data("Agri", R.drawable.baimg, 4.6f));
+        apps.add(new modern_agri_data( R.drawable.news1));
+        apps.add(new modern_agri_data( R.drawable.news2));
+        apps.add(new modern_agri_data( R.drawable.news3));
         adapter = new Modern_agri_adapter(apps,getContext());
         mRecyclerView.setAdapter(adapter);
 

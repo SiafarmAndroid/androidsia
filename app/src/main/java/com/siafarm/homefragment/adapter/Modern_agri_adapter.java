@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
@@ -26,14 +25,12 @@ public class Modern_agri_adapter extends RecyclerView.Adapter<Modern_agri_adapte
 
     class MyViewHolder extends RecyclerView.ViewHolder {
         ImageView date;
-        TextView number;
         LinearLayout linear_layout;
 
 
         MyViewHolder(View view) {
             super(view);
             date =  view.findViewById(R.id.img_profile);
-            number =  view.findViewById(R.id.validdate);
             linear_layout =  view.findViewById(R.id.linear_layout);
 
         }
@@ -62,7 +59,6 @@ public class Modern_agri_adapter extends RecyclerView.Adapter<Modern_agri_adapte
     public void onBindViewHolder(final Modern_agri_adapter.MyViewHolder holder, @SuppressLint("RecyclerView") final int position) {
         modern_agri_data cardDetails = cardList.get(position);
 
-        holder.number.setText(" " + cardDetails.getName());
         // Loading profile image
         Glide.with(myActivity).load(cardDetails.getDrawable())
                 .crossFade()
