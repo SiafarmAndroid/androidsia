@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">SiaFarm</string>
+
+    <!-- Navigation Drawer menu labels -->
+    <string name="nav_home">SiaFarm</string>
+    <string name="nav_news_updated">News Updates</string>
+    <string name="nav_modern_agri">Modern Agri</string>
+    <string name="nav_veg_farming">Vegetable Farming</string>
+    <string name="nav_products">Products</string>
+    <string name="nav_services">Services</string>
+    <string name="nav_gallery">Gallery</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="openDrawer">open_drawer</string>
+    <string name="closeDrawer">close_drawer</string>
+    <string name="news_updated">NEWS UPDATES</string>
+    <string name="modern_agri">MORDEN AGRI</string>
+    <string name="vegetable_farming">VEGETABLE FARMING</string>
+    <string name="products">PRODUCTS</string>
+    <string name="services">SERVICES</string>
+    <string name="gallery">GALLERY</string>
+
+    <!-- Toolbar titles when navigation menu item is selected -->
+    <string-array name="nav_item_activity_titles">
+        <item>SiaFarm</item>
+        <item>News Updates</item>
+        <item>Modern Agri</item>
+        <item>Vegetable Farming</item>
+        <item>Products</item>
+        <item>Services</item>
+        <item>Gallery</item>
+    </string-array>
+
+</resources>
