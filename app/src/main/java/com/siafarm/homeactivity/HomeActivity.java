@@ -147,7 +147,7 @@ public class HomeActivity extends AppCompatActivity {
                         break;
                     case R.id.nav_veg_farming:
                         navItemIndex = 2;
-                        CURRENT_TAG = TAG_CONTACT;
+                        CURRENT_TAG = TAG_VEG_FARMING;
                         break;
                     case R.id.nav_contact:
                         navItemIndex = 3;
