@@ -10,28 +10,17 @@
             android:id="@+id/nav_news_updated"
             android:icon="@drawable/ic_home_black_24dp"
             android:title="@string/news_updated" />
-        <item
-            android:id="@+id/nav_modern_agri"
-            android:icon="@drawable/ic_home_black_24dp"
-            android:title="@string/modern_agri" />
+
         <item
             android:id="@+id/nav_veg_farming"
             android:icon="@drawable/ic_home_black_24dp"
             android:title="@string/vegetable_farming" />
 
         <item
-            android:id="@+id/nav_products"
+            android:id="@+id/nav_contact"
             android:icon="@drawable/ic_home_black_24dp"
-            android:title="@string/products" />
+            android:title="@string/contact_veg" />
 
-        <item
-            android:id="@+id/nav_services"
-            android:icon="@drawable/ic_home_black_24dp"
-            android:title="@string/services" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_home_black_24dp"
-            android:title="@string/gallery" />
     </group>
 
 

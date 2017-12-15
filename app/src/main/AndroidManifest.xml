@@ -9,7 +9,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar"
         tools:ignore="AllowBackup">
-        <activity android:name="com.siafarm.splash.Splashscreenactivity">
+        <activity android:name="com.siafarm.splash.Splashscreenactivity"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboard|keyboardHidden|screenLayout|navigation|smallestScreenSize|uiMode|screenSize|touchscreen|mcc|mnc|locale|fontScale"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

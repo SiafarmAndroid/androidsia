@@ -83,11 +83,7 @@ public class HomeFragment extends Fragment {
         SnapAdapter snapAdapter = new SnapAdapter(getActivity());
         if (mHorizontal) {
             snapAdapter.addSnap(new Snap(Gravity.CENTER, getResources().getString(R.string.news_updated), apps));
-            snapAdapter.addSnap(new Snap(Gravity.START, getResources().getString(R.string.modern_agri), modernapps));
             snapAdapter.addSnap(new Snap(Gravity.START, getResources().getString(R.string.vegetable_farming), modernapps));
-            snapAdapter.addSnap(new Snap(Gravity.START, getResources().getString(R.string.products), modernapps));
-            snapAdapter.addSnap(new Snap(Gravity.START, getResources().getString(R.string.services), modernapps));
-            snapAdapter.addSnap(new Snap(Gravity.START, getResources().getString(R.string.gallery), modernapps));
             mRecyclerView.setAdapter(snapAdapter);
         } else {
             Adapter adapter = new Adapter(false, false, apps);
@@ -110,16 +106,16 @@ public class HomeFragment extends Fragment {
     }
     private List<App> getModernApps() {
         List<App> apps = new ArrayList<>();
-        apps.add(new App( R.drawable.vegsia1));
-        apps.add(new App( R.drawable.vegsia3 ));
+        apps.add(new App( R.drawable.vegsia10));
+        apps.add(new App( R.drawable.vegsia6 ));
+        apps.add(new App( R.drawable.vegsia5 ));
+        apps.add(new App( R.drawable.vegsia1 ));
+        apps.add(new App( R.drawable.vegsia2 ));
         apps.add(new App( R.drawable.vegsia3 ));
         apps.add(new App( R.drawable.vegsia4 ));
-        apps.add(new App( R.drawable.vegsia5 ));
-        apps.add(new App( R.drawable.vegsia6 ));
-        apps.add(new App( R.drawable.vegsia7 ));
         apps.add(new App( R.drawable.vegsia8 ));
         apps.add(new App( R.drawable.vegsia9 ));
-        apps.add(new App( R.drawable.vegsia10 ));
+        apps.add(new App( R.drawable.vegsia7 ));
         return apps;
     }
 

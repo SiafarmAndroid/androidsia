@@ -12,6 +12,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 
 import com.siafarm.R;
 import com.siafarm.homefragment.HomeFragment;
@@ -30,10 +32,9 @@ public class HomeActivity extends AppCompatActivity {
 
     // tags used to attach the fragments
     private static final String TAG_HOME = "siafarm";
-    private static final String TAG_NEWS_UPDATES = "news_updates";
     private static final String TAG_MODERN_AGRI = "modern_agri";
     private static final String TAG_VEG_FARMING = "veg_farming";
-    private static final String TAG_GALLERY = "gallery";
+    private static final String TAG_CONTACT= "contact";
     private static final String TAG_PRODUCTS = "products";
     private static final String TAG_SERVICES = "services";
 
@@ -47,7 +48,10 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_home);
+
         toolbar =  findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -109,6 +113,9 @@ public class HomeActivity extends AppCompatActivity {
             case 2:
                 // Modern Agri
                 return new ModernAgriFragment();
+            case 3:
+                // Modern Agri
+                return new ContactFragment();
             default:
                 return new HomeFragment();
         }
@@ -136,12 +143,17 @@ public class HomeActivity extends AppCompatActivity {
                         break;
                     case R.id.nav_news_updated:
                         navItemIndex = 1;
-                        CURRENT_TAG = TAG_NEWS_UPDATES;
-                        break;
-                    case R.id.nav_modern_agri:
-                        navItemIndex = 2;
                         CURRENT_TAG = TAG_MODERN_AGRI;
                         break;
+                    case R.id.nav_veg_farming:
+                        navItemIndex = 2;
+                        CURRENT_TAG = TAG_CONTACT;
+                        break;
+                    case R.id.nav_contact:
+                        navItemIndex = 3;
+                        CURRENT_TAG = TAG_CONTACT;
+                        break;
+
                     default:
                         navItemIndex = 0;
                 }
